@@ -23,7 +23,7 @@ public class MainActivity extends Activity
 {
 	// SINGLETON
 	public enum instance
-	{
+	{      //test
 		INSTANCE;
 		private LinkedHashMap<Integer, Station> stations;
 		private ArrayList<Station> stationsInVicinity = new ArrayList<Station>();
