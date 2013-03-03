@@ -5,16 +5,13 @@ public class Station {
 	private int vbbNr;
 	private int hafasNr;
 	private String name;
-	private float lat;
-	private float lon;
 	private LocationVector locationVector;
 
-	public Station(String vbbNr, String hafasNr, String name, String lat, String lon, LocationVector locationVector) {
+	public Station(String vbbNr, String hafasNr, String name, LocationVector locationVector) {
 		this.vbbNr = Integer.valueOf(vbbNr);
 		this.hafasNr = Integer.valueOf(hafasNr);
 		this.name = name;
-		this.lat = Float.parseFloat(lat);
-		this.lon = Float.parseFloat(lon);
+		
 		this.locationVector = locationVector;
 	}
 
@@ -42,25 +39,11 @@ public class Station {
 		this.name = name;
 	}
 
-	public float getLat() {
-		return lat;
-	}
 
-	public void setLat(float lat) {
-		this.lat = lat;
-	}
-
-	public float getLon() {
-		return lon;
-	}
-
-	public void setLon(float lon) {
-		this.lon = lon;
-	}
 
 	@Override
 	public String toString() {
-		return super.toString() + getVbbNr() + " " + getHafasNr() + " " + getLat() + " " + getLon();
+		return super.toString() + getVbbNr() + " " + getHafasNr() + " ";
 	}
 
 	public LocationVector getLocationVector() {
