@@ -1,47 +1,38 @@
 package de.nkdk.berlintripassistant;
 
-public class LocationVector
-{
+public class LocationVector {
 	private double lon;
 	private double lat;
 	private double currentDistance;
 
-	public double getlon() {
+	public double getLon() {
 		return lon;
 	}
 
-	public double getlat() {
+	public double getLat() {
 		return lat;
 	}
-	
-	public void estimateCurrentDistance(double locallat, double locallon) 
-	{
-//		this.currentDistance=Math.sqrt(Math.pow(Math.abs(localX - this.getX()), 2)+Math.pow(Math.abs(localY - this.getY()), 2));
+
+	public void estimateCurrentDistance(double locaLat, double localLon) {
 		double dx;
 		double dy;
-		double lat;
-		
-		lat = (((this.lat+locallat)/2) * 0.01745);		
-		dx = 111.3* Math.cos(lat) * (this.lon-locallon);
-		dy = 111.3 * (this.lat-locallat);
-		
-		double distance = Math.sqrt(dx * dx + dy * dy)*1000;
-		this.currentDistance=distance;
+
+		dx = 111.3 * Math.cos((((this.lat + locaLat) / 2) * 0.01745)) * (this.lon - localLon);
+		dy = 111.3 * (this.lat - locaLat);
+
+		this.currentDistance = Math.sqrt(dx * dx + dy * dy) * 1000;
 	}
-	
-	public double getCurrentDistance()
-	{
+
+	public double getCurrentDistance() {
 		return this.currentDistance;
 	}
 
-	public LocationVector(String lat, String lon) 
-	{
-		this.lon = (Double.parseDouble(lon)/1000000);
-		this.lat = (Double.parseDouble(lat)/1000000);
+	public LocationVector(String lat, String lon) {
+		this.lon = (Double.parseDouble(lon) / 1000000);
+		this.lat = (Double.parseDouble(lat) / 1000000);
 	}
-	
-	public void printLocationvector()
-	{
+
+	public void printLocationvector() {
 		System.out.println(this.currentDistance);
 	}
 }

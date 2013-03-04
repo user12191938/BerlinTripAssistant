@@ -11,7 +11,6 @@ public class Station {
 		this.vbbNr = Integer.valueOf(vbbNr);
 		this.hafasNr = Integer.valueOf(hafasNr);
 		this.name = name;
-		
 		this.locationVector = locationVector;
 	}
 
@@ -39,15 +38,13 @@ public class Station {
 		this.name = name;
 	}
 
-
+	public LocationVector getLocationVector() {
+		return locationVector;
+	}
 
 	@Override
 	public String toString() {
 		return super.toString() + getVbbNr() + " " + getHafasNr() + " ";
-	}
-
-	public LocationVector getLocationVector() {
-		return locationVector;
 	}
 
 }
